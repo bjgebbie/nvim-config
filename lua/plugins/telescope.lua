@@ -24,7 +24,6 @@ return {
 				},
 			})
 			telescope.load_extension("ui-select")
-			require("telescope.builtin").highlights()
 		end,
 	},
 }
