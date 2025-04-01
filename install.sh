@@ -3,22 +3,21 @@
 apt -y update
 apt-get -y upgrade
 
-mkir temp_delete
-cd temp_delete
+apt install -y ripgrep
+apt install -y git
+apt install -y luarocks
+apt install -y neovim-runtime
+mkdir temp_delete
 
 if [ ! $(which nvim) ]; then
     echo "Can't find NeoVIM, installing now..."
-    wget https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-x86_64.tar.gz
-    tar -xvf nvim-linux-x86_64
+    wget -P ./temp_delete/ https://github.com/neovim/neovim/releases/download/v0.11.0/nvim-linux-x86_64.tar.gz
+    tar -xvf ./temp_delete/nvim-linux-x86_64.tar.gz -C ./temp_delete
 
     echo "Moving to /bin/nvim/ and Aliasing..."
-    cp nvim-linux-x86_64/bin/nvim /bin/nvim
+    cp ./temp_delete/nvim-linux-x86_64/bin/nvim /bin/nvim
     echo 'alias vim="nvim"'
+
+    nvim
 fi
 
-cd ../
-rm -rf temp_delete
-
-apt install -y rg
-apt install -y git
-apt install -y luarocks
