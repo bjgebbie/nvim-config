@@ -1,19 +1,16 @@
 return {
     {
+        "rcarriga/nvim-notify",
+        config = function()
+            require("notify").setup({
+                background_colour = "#111111",
+            })
+        end,
+    },
+    {
         "folke/noice.nvim",
         config = function()
-            require("noice").setup({
-                views = {
-                    mini = {
-                        win_options = {
-                            winblend = 0,
-                        },
-                    },
-                },
-            })
-            require("notify").setup({
-                background_color = "#111111",
-            })
+            require("noice").setup()
         end,
         presets = {
             bottom_search = true, -- use a classic bottom cmdline for search
