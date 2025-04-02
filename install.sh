@@ -24,6 +24,7 @@ if [ ! $(which node) ]; then
 fi
 
 npm i -g typescript typescript-language-server 
+npm i -g vscode-langservers-extracted
 
 if [ ! $(which nvim) ]; then
     echo "Can't find NeoVIM, installing now..."
