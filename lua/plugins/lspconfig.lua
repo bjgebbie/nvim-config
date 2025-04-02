@@ -7,6 +7,9 @@ return {
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+		lspconfig.ts_ls.setup({
+			capabilities,
+		})
 		lspconfig.lua_ls.setup({
 			capabilities,
 			vim.diagnostic.config({
