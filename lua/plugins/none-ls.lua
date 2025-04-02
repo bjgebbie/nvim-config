@@ -1,10 +1,11 @@
 return {
 	{
 		"nvimtools/none-ls-extras.nvim",
+		event = "BufRead",
 	},
 	{
 		"nvimtools/none-ls.nvim",
-
+		event = "BufRead",
 		keys = {
 			{ "<leader>gf", vim.lsp.buf.format, desc = "Format File" },
 		},

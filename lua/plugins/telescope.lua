@@ -13,6 +13,7 @@ return {
 	},
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
+		event = "BufRead",
 		config = function()
 			local telescope = require("telescope")
 

@@ -1,9 +1,11 @@
 return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
+		event = "BufRead",
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		event = "BufRead",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -11,6 +13,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		event = "BufRead",
 		config = function()
 			local cmp = require("cmp")
 
