@@ -6,29 +6,24 @@ return {
 	config = function()
 		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+		local function setup_lsp_diags()
+			vim.lsp.handlers["textDocument/publishDiagnostics"] =
+				vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+					virtual_text = false,
+					signs = true,
+					update_in_insert = false,
+					underline = true,
+				})
+		end
 		lspconfig.ts_ls.setup({
 			capabilities,
+			setup_lsp_diags,
 		})
 		lspconfig.lua_ls.setup({
 			capabilities,
-			vim.diagnostic.config({
-				virtual_text = true,
-				signs = true,
-				underline = true,
-				update_in_insert = false,
-				severity_sort = true,
-			}),
 		})
 		lspconfig.clangd.setup({
 			capabilities,
-			vim.diagnostic.config({
-				virtual_text = true,
-				signs = true,
-				underline = true,
-				update_in_insert = false,
-				severity_sort = true,
-			}),
 		})
 	end,
 }
