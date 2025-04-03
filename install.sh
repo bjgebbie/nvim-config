@@ -3,7 +3,7 @@
 apt -y update
 apt-get -y upgrade
 
-if [ ! $(which ripgrep) ]; then
+if [ ! $(which rg) ]; then
     apt install ripgrep -y 
 fi
 

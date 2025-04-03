@@ -35,7 +35,6 @@ return {
                     null_ls.builtins.formatting.clang_format,
                     null_ls.builtins.formatting.prettier,
                     require("none-ls.diagnostics.eslint"),
-                    null_ls.builtins.diagnostics.tflint,
                 },
             })
         end,
