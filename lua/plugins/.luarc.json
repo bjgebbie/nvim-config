@@ -4,6 +4,7 @@
     ],
     "diagnostics.globals": [
         "vim",
-        "settings"
+        "settings",
+        "dashboard"
     ]
 }
