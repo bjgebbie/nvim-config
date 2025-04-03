@@ -14,6 +14,7 @@ return {
                     "lua_ls",
                     "clangd",
                     "eslint",
+                    "terraformls",
                 },
             })
         end,
@@ -29,6 +30,7 @@ return {
             require("mason-null-ls").setup({
                 ensure_installed = {
                     "stylua",
+                    "tflint",
                     "prettier",
                 },
             })
