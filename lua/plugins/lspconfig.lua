@@ -15,6 +15,9 @@ return {
                 underline = true,
             }),
         }
+        lspconfig.terraformls.setup({
+            standard_setup,
+        })
         lspconfig.eslint.setup({
             on_attach = function(bufnr)
                 vim.api.nvim_create_autocmd("BufWritePre", {

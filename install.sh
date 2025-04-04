@@ -2,6 +2,7 @@
 
 apt -y update
 apt-get -y upgrade
+apt install unzip
 
 if [ ! $(which rg) ]; then
     apt install ripgrep -y 
@@ -22,8 +23,6 @@ fi
 if [ ! $(which node) ]; then
     apt install nodejs npm -y
 fi
-
-apt install unzip
 
 npm i -g typescript typescript-language-server 
 npm i -g vscode-langservers-extracted
