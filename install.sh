@@ -23,8 +23,16 @@ if [ ! $(which node) ]; then
     apt install nodejs npm -y
 fi
 
+apt install unzip
+
 npm i -g typescript typescript-language-server 
 npm i -g vscode-langservers-extracted
+
+if [ ! $(which terraform-ls) ]; then
+    echo "Installing the terraform LS"
+    wget -P /opt https://releases.hashicorp.com/terraform-ls/0.36.4/terraform-ls_0.36.4_linux_amd64.zip
+    unzip /opt/terraform-ls_0.36.4_linux_amd64.zip -d /opt
+    ls -s /opt/terraform-ls /bin/terraform-ls
 
 if [ ! $(which nvim) ]; then
     echo "Can't find NeoVIM, installing now..."
