@@ -15,9 +15,12 @@ return {
                 underline = true,
             }),
         }
-        lspconfig.terraformls.setup({
-            standard_setup,
-        })
+
+        lspconfig.bashls.setup({ standard_setup })
+        lspconfig.ts_ls.setup({ standard_setup })
+        lspconfig.terraformls.setup({ standard_setup })
+        lspconfig.lua_ls.setup({ standard_setup })
+        lspconfig.clangd.setup({ standard_setup })
         lspconfig.eslint.setup({
             on_attach = function(bufnr)
                 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -30,15 +33,6 @@ return {
                     enable = false,
                 }
             end,
-        })
-        lspconfig.ts_ls.setup({
-            standard_setup,
-        })
-        lspconfig.lua_ls.setup({
-            standard_setup,
-        })
-        lspconfig.clangd.setup({
-            standard_setup,
         })
     end,
 }

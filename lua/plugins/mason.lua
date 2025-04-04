@@ -14,7 +14,9 @@ return {
                     "lua_ls",
                     "clangd",
                     "eslint",
+                    "ts_ls",
                     "terraformls",
+                    "bashls",
                 },
             })
         end,
