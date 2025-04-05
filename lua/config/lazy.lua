@@ -32,4 +32,5 @@ require("lazy").setup({
 	checker = { enabled = true },
 })
 
-require("config.options")
+require("config.options.index")
+require("config.keybinds")
