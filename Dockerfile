@@ -6,4 +6,4 @@ COPY ./assets/node-typescript-boilerplate /root/.config/nvim/assets
 
 RUN ./install.sh
 
-CMD ["echo", "hello"]
+CMD ["echo", "You forgot to set an entrypoint silly goose!"]
