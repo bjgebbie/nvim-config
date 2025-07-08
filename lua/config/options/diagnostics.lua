@@ -8,8 +8,8 @@ return {
         ]])
 
 		vim.cmd([[
-            highlight NormalFloat guibg=#27231c " Set a solid background for floating windows
-            highlight FloatBorder guibg=#27231c " Set the same background for borders (optional)
+            highlight NormalFloat guibg=#27231c
+            highlight FloatBorder guibg=#27231c
         ]])
 	end,
 }

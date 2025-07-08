@@ -1,10 +1,12 @@
 {
     "diagnostics.disable": [
-        "undefined-doc-name"
+        "undefined-doc-name",
+        "unused-local"
     ],
     "diagnostics.globals": [
         "vim",
         "settings",
-        "dashboard"
+        "dashboard",
+        "on_attach"
     ]
 }

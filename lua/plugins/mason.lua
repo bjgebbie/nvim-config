@@ -1,12 +1,16 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		version = "^1.0.0",
+		lazy = true,
 		config = function()
-			require("mason").setup()
+			require("mason").setup({})
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		version = "^1.0.0",
+		lazy = true,
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			mason_lspconfig.setup({
@@ -18,6 +22,7 @@ return {
 					local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 					local standard_setup = {
+						on_attach = on_attach,
 						capabilities,
 						vim.diagnostic.config({
 							virtual_text = true,
@@ -31,6 +36,31 @@ return {
 					lspconfig.clangd.setup({ standard_setup })
 					lspconfig.eslint.setup({ standard_setup })
 					lspconfig.bashls.setup({ standard_setup })
+					lspconfig.yamlls.setup({ standard_setup })
+					lspconfig.jdtls.setup({
+						standard_setup,
+						settings = {
+							java = {
+								configuration = {
+									runtimes = {
+										{
+											name = "JavaSE-24",
+											path = "/home/btr5kqq/.sdkman/candidates/java/24.0.1-amzn",
+											default = true,
+										},
+										{
+											name = "JavaSE-21",
+											path = "/home/btr5kqq/.sdkman/candidates/java/21.0.7-amzn",
+										},
+										{
+											name = "JavaSE-17",
+											path = "/home/btr5kqq/.sdkman/candidates/java/17.0.15-amzn",
+										},
+									},
+								},
+							},
+						},
+					})
 					lspconfig.ts_ls.setup({ standard_setup })
 				end,
 			})

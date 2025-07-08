@@ -13,4 +13,7 @@ return {
             desc = "Buffer Local Keymaps (which-key)",
         },
     },
+    opts = {
+        preset = 'helix'
+    }
 }

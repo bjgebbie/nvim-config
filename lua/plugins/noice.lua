@@ -1,6 +1,7 @@
 return {
     {
         "rcarriga/nvim-notify",
+        version = "^3.0.0",
         config = function()
             require("notify").setup({
                 background_colour = "#111111",
@@ -9,6 +10,7 @@ return {
     },
     {
         "folke/noice.nvim",
+        version = "^4.0.0",
         config = function()
             require("noice").setup()
         end,
